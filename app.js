@@ -15,7 +15,7 @@ const RECALL_TYPES = [
   "Perio Maintenance", "Prophy", "POE",
   "PERIAS", "Post-op Follow-up", "Other",
 ];
-const RECALL_INTERVALS = [3, 4, 6, 12, 18, 24, 36];
+const RECALL_INTERVALS = [0, 3, 4, 6, 12, 18, 24, 36];
 const RECALL_STATUSES = ["Pending", "Contacted", "Scheduled", "Completed"];
 const CLOSED_STATUSES = ["Scheduled", "Completed"];
 const ATTENTION_WINDOW_DAYS = 14;
