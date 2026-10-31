@@ -1,7 +1,7 @@
 "use strict";
 
 /* ============================================================
-   Dental Patient Tracker: static web app (no server, no build).
+   Dental Case Tracker: static web app (no server, no build).
    Everything is stored in this browser's localStorage.
    ============================================================ */
 
@@ -541,7 +541,7 @@ function loginView() {
 
   return h("div", { class: "login-wrap" },
     h("div", { class: "card login-card" },
-      h("h1", null, "🦷 Dental Patient Tracker"),
+      h("h1", null, "🦷 Dental Case Tracker"),
       h("p", { class: "muted" }, "Sign in to open your patient list."),
       tabs,
       form,
@@ -584,7 +584,7 @@ function appShell() {
   );
 
   const main = h("main", { class: "main" },
-    h("h1", null, "Dental Patient Tracker"),
+    h("h1", null, "Dental Case Tracker"),
     h("section", { id: "dashboard" }),
     h("section", { id: "detail" })
   );
@@ -922,7 +922,7 @@ function exportBackup() {
 /** Validate and normalize imported data so bad files can't corrupt the app. */
 function sanitizeData(raw) {
   if (!raw || !Array.isArray(raw.patients)) {
-    throw new Error("This file doesn't look like a Dental Patient Tracker backup.");
+    throw new Error("This file doesn't look like a Dental Case Tracker backup.");
   }
   const str = (v) => (v == null ? "" : String(v));
   const int = (v) => {
