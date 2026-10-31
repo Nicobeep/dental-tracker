@@ -12,8 +12,8 @@
 const PRIORITIES = ["High", "Medium", "Low"];
 const TREATMENT_STATUSES = ["Planned", "Scheduled", "In Progress", "Completed", "Referred"];
 const RECALL_TYPES = [
-  "Perio Maintenance", "Prophy", "Periodic Exam",
-  "Radiographs", "Post-op Follow-up", "Other",
+  "Perio Maintenance", "Prophy", "POE",
+  "PERIAS", "Post-op Follow-up", "Other",
 ];
 const RECALL_INTERVALS = [3, 4, 6, 12, 18, 24, 36];
 const RECALL_STATUSES = ["Pending", "Contacted", "Scheduled", "Completed"];
@@ -438,7 +438,7 @@ function recallDialog(patientId, recall) {
       renderDashboard();
     },
   },
-    field("Recall type", selectEl("recallType", RECALL_TYPES, recall?.recallType || "Periodic Exam")),
+    field("Recall type", selectEl("recallType", RECALL_TYPES, recall?.recallType || "POE")),
     h("div", { class: "field-pair" },
       field("Interval (months)", selectEl("interval", RECALL_INTERVALS, recall?.intervalMonths || 6)),
       field("Last visit", h("input", { type: "date", name: "lastVisit", value: recall?.lastVisit || todayStr(), required: true }))
