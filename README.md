@@ -1,4 +1,4 @@
-#Dental Patient Tracker
+# Dental Patient Tracker
 
 A small, browser-based tool for tracking restorative treatment needs and recall appointments for dental patients.
 
