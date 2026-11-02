@@ -1,6 +1,6 @@
 # Dental Patient Tracker
 
-A small, browser-based tool for tracking restorative treatment needs and recall appointments for dental patients.
+A personal, browser-based tool to track restorative treatment needs and recall appointments for dental patients.
 
 - **Dashboard:** counts of overdue and upcoming recalls, plus a "Recalls needing attention" list you can act on directly.
 - **Patients:** search by internal patient ID, add or delete patients, and keep free-text notes.
