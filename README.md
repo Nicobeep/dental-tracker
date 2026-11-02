@@ -126,8 +126,8 @@ If you change `index.html`, `styles.css` or `app.js`, rebuild the launcher so it
 
 - Single user per browser. No sharing between staff or devices.
 - No server-side access control, audit log or encryption at rest.
-- Intended for a single clinic's working data, not as a certified medical records system. Check your legal and privacy obligations (for example HIPAA in the US) before storing real patient information.
+- Intended for a single clinic's working data, not as a certified medical records system. Check your legal and privacy obligations before storing real patient information.
 
 ## License
 
-Add a license before publishing if others will use or copy the code.
+MIT LICENSE.
