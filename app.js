@@ -21,10 +21,10 @@
 const PRIORITIES = ["High", "Medium", "Low"];
 const TREATMENT_STATUSES = ["Planned", "Scheduled", "In Progress", "Completed", "Referred"];
 const RECALL_TYPES = [
-  "Perio Maintenance", "Prophy", "Periodic Exam",
-  "Radiographs", "Post-op Follow-up", "Other",
+  "Perio Maintenance", "Prophy", "POE",
+  "PERIAS", "Post-op Follow-up", "Other",
 ];
-const RECALL_INTERVALS = [3, 4, 6, 12, 18, 24, 36];
+const RECALL_INTERVALS = [0, 3, 4, 6, 12, 18, 24, 36];
 const RECALL_STATUSES = ["Pending", "Contacted", "Scheduled", "Completed"];
 const CLOSED_STATUSES = new Set(["Scheduled", "Completed"]);
 const ATTENTION_WINDOW_DAYS = 14;
@@ -584,7 +584,7 @@ function recallDialog(patientId, recall) {
       renderAll();
     },
   },
-    field("Recall type", selectEl("recallType", RECALL_TYPES, recall?.recallType || "Periodic Exam")),
+    field("Recall type", selectEl("recallType", RECALL_TYPES, recall?.recallType || "POE")),
     h("div", { class: "field-pair" },
       field("Interval (months)", selectEl("interval", RECALL_INTERVALS, recall?.intervalMonths || 6)),
       field("Last visit", h("input", { type: "date", name: "lastVisit", value: recall?.lastVisit || todayStr(), required: true }))
@@ -694,7 +694,7 @@ function loginView() {
 
   return h("div", { class: "login-wrap" },
     h("div", { class: "card login-card" },
-      h("h1", null, "🦷 Dental Patient Tracker"),
+      h("h1", null, "🦷 Dental Case Tracker"),
       h("p", { class: "muted" }, "Sign in to open your patient list."),
       tabs,
       form,
@@ -737,7 +737,7 @@ function appShell() {
   );
 
   const main = h("main", { class: "main" },
-    h("h1", null, "Dental Patient Tracker"),
+    h("h1", null, "Dental Case Tracker"),
     h("section", { id: "dashboard" }),
     h("section", { id: "detail" })
   );
@@ -1035,7 +1035,7 @@ function exportBackup() {
 /** Validate and normalize imported data so a bad file can't corrupt the app. */
 function sanitizeData(raw) {
   if (!raw || !Array.isArray(raw.patients)) {
-    throw new Error("This file doesn't look like a Dental Patient Tracker backup.");
+    throw new Error("This file doesn't look like a Dental Case Tracker backup.");
   }
   const str = (v) => (v == null ? "" : String(v));
   const int = (v) => {
