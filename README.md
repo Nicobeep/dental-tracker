@@ -16,6 +16,7 @@ It is a static web app: plain HTML, CSS and JavaScript with no build step, no fr
 
 ## Quick start
 
+### App is live on: https://nicobeep.github.io/dental-tracker/
 ### Option A: Run it on your computer
 
 Requires Python 3.8 or newer. Nothing else to install.
@@ -41,14 +42,6 @@ python3 -m http.server 8000
 ```
 
 Then open `http://localhost:8000`.
-
-### Option C: Host it on GitHub Pages
-
-1. Create a GitHub repository and push these files to the root of the `main` branch:
-   `index.html`, `styles.css`, `app.js`, `README.md`.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, set **Source** to *Deploy from a branch*, choose **main** and **/ (root)**, then **Save**.
-4. After a minute the site is live at `https://<your-username>.github.io/<repo-name>/`.
 
 GitHub Pages is public, but the site contains only the app code. Patient data never leaves the browser that enters it.
 
